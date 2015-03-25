@@ -6,11 +6,11 @@ class AccommodationsController < ApplicationController
   end
 
   def create
-    place = Place.find(params[:place_id])
-    accommodation = place.accommodations.new(accommodations_params)
-    if accommodation.save
+    @place = Place.find(params[:place_id])
+    @accommodation = @place.accommodations.new(accommodations_params)
+    if @accommodation.save
       flash[:notice] = "Accommodation saved"
-      redirect_to place_path(place.accommodation)
+      redirect_to place_path(@place)
     else
       render :new
     end
@@ -19,6 +19,6 @@ class AccommodationsController < ApplicationController
 
 private
   def accommodations_params
-    params.require(:accommodation).permit(:description, :type, :guests, :price)
+    params.require(:accommodation).permit(:description, :housing_type, :guests, :price, :name)
   end
 end

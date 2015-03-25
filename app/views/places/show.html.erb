@@ -1,1 +1,14 @@
 <h2><%= @place.city %></h2>
+
+<% if @place.accommodations.any? %>
+  <h3>Available Accommodations:</h3>
+    <ul>
+      <% @place.accommodations.each do |accommodation| %>
+      <li><%= accommodation.name %> $<%= accommodation.price %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>There are no accommodations yet for <%= @place.city %></p>
+<% end %>
+
+<%= link_to "Add Accommodation", new_place_accommodation_path(@place) %>
