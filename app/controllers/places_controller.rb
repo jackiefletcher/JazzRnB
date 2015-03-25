@@ -30,7 +30,7 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     if @place.update(places_params)
       flash[:notice] = "Your place has been editied successfully"
-      redirect to places_path
+      redirect_to places_path
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class PlacesController < ApplicationController
     flash[:notice] = "Place Deleted"
     redirect_to places_path
   end
-  
+
 
 private
   def places_params

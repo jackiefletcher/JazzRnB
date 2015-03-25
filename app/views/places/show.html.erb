@@ -4,11 +4,15 @@
   <h3>Available Accommodations:</h3>
     <ul>
       <% @place.accommodations.each do |accommodation| %>
-      <li><%= accommodation.name %> $<%= accommodation.price %></li>
+      <li><%= link_to accommodation.name, place_accommodation_path(@place, accommodation) %> $<%= accommodation.price %></li>
       <% end %>
     </ul>
   <% else %>
     <p>There are no accommodations yet for <%= @place.city %></p>
 <% end %>
 
-<%= link_to "Add Accommodation", new_place_accommodation_path(@place) %>
+<p><%= link_to "Add Accommodation", new_place_accommodation_path(@place) %></p>
+<p><%= link_to "Edit", edit_place_path(@place) %></p>
+<p><%= link_to "Delete", place_path(@place), :data => { :confirm => "Are you sure?",
+                                                        :method => "delete" } %></p>
+  <p><%= link_to "Return to Places", places_path %></p>

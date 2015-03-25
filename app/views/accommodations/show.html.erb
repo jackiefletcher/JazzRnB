@@ -1,1 +1,14 @@
-<p></p>
+<h2><%= @accommodation.name %></h2>
+
+
+  <p><%= @accommodation.name %> $<%= @accommodation.price %></p>
+  <p><%= @accommodation.description %></p>
+  <p>Type: <%= @accommodation.housing_type %></p>
+  <p>Number of Guests: <%= @accommodation.guests %></p>
+
+
+
+<p><%= link_to "Edit", edit_place_accommodation_path(@place, @accommodation) %></p>
+<p><%= link_to "Delete", place_accommodation_path(@place, @accommodation), :data => { :confirm => "Are you sure?",
+  :method => "delete" } %></p>
+  <p><%= link_to "Return to Places", places_path %></p>
