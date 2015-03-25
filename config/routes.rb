@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  resources :places
+  root :to => 'places#index'
+
+  resources :places do
+    resources :accommodations, :except => [:show, :index]
+  end
+
 end

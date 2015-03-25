@@ -1,3 +1,9 @@
 <h2>Welcome to JazzRnB!</h2>
 
+<ul>
+  <% @places.each do |p| %>
+  <li><%= link_to p.city, place_path(p) %></li>
+  <%  end %>
+</ul>
+
 <p><%= link_to "Create New Place", new_place_path %></p>

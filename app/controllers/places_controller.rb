@@ -18,6 +18,32 @@ class PlacesController < ApplicationController
     end
   end
 
+  def show
+    @place = Place.find(params[:id])
+  end
+
+  def edit
+    @place = Place.find(params[:id])
+  end
+
+  def update
+    @place = Place.find(params[:id])
+    if @place.update(places_params)
+      flash[:notice] = "Your place has been editied successfully"
+      redirect to places_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @place = Place.find(params[:id])
+    @place.destroy
+    flash[:notice] = "Place Deleted"
+    redirect_to places_path
+  end
+  
+
 private
   def places_params
     params.require(:place).permit(:city, :state, :country)
