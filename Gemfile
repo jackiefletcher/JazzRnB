@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'factory_girl_rails'
 gem 'devise'
+gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 
 group :development do
   gem 'byebug'

@@ -21,6 +21,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    @user = current_user
   end
 
   def edit

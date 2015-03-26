@@ -16,3 +16,7 @@
 <p><%= link_to "Delete", place_path(@place), :data => { :confirm => "Are you sure?",
                                                         :method => "delete" } %></p>
   <p><%= link_to "Return to Places", places_path %></p>
+
+
+
+  <p><%= image_tag @user.avatar.url(:thumb) %></p>
