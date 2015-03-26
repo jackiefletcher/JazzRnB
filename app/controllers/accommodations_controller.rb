@@ -1,4 +1,6 @@
 class AccommodationsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
+
 
   def new
     @place = Place.find(params[:place_id])

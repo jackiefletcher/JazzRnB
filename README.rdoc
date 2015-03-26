@@ -1,28 +1,38 @@
-== README
+JazzRnB
+==============
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A clone of the AirBnB website/app, allowing users to create places and accommodations to rent.
 
-Things you may want to cover:
+Installation and Usage
+------------
+Run Postgres Sever
 
-* Ruby version
+Clone or download this repository and cd into indent directory
 
-* System dependencies
+```
+$ rake db:create
+$ rake db:migrate
+$ rails server
+```
 
-* Configuration
+In your browser visit localhost:3000
 
-* Database creation
+Motivation
+--------
+> **To Practice:**
+>- Ruby On Rails project setup
+>- User authentication
+>- ActionMailer
+>- FactoryGirl
+>- Unit testing with RSPEC
+>- Integration testing with CAPYBARA
 
-* Database initialization
+Authors
+------
 
-* How to run the test suite
+Jackie Fletcher and Debbie Cravey
 
-* Services (job queues, cache servers, search engines, etc.)
+License
+-------
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+MIT license 2015

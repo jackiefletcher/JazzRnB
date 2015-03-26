@@ -1,7 +1,11 @@
 require 'rails_helper'
+include Warden::Test::Helpers
+Warden.test_mode!
 
 describe 'the add an accommodation process' do
   it 'adds a new accommodation' do
+    user = FactoryGirl.create(:user)
+    sign_in_user(user)
     visit places_path
     place = FactoryGirl.create(:place)
     visit place_path(place)
