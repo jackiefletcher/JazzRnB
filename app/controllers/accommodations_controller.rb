@@ -45,7 +45,7 @@ class AccommodationsController < ApplicationController
     flash[:notice] = "Accommodation successfully deleted"
     redirect_to places_path(@accommodation.place)
   end
-  
+   
 
 private
   def accommodations_params
